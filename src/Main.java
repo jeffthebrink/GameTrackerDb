@@ -43,7 +43,7 @@ public class Main {
 
         System.out.println("Current game list:");
         for (Game game : gameArrayList) {
-            System.out.print(game.toString()); //todo now display this array list onto the html page with mustache template
+            System.out.print(game.toString());
         }
         return gameArrayList;
 
@@ -59,7 +59,7 @@ public class Main {
         stmt3.setString(3, new_game_platform);
         stmt3.setInt(4, new_release_year);
         stmt3.setInt(5, id);
-        stmt3.execute(); // todo left off here
+        stmt3.execute();
     }
 
 
@@ -151,10 +151,10 @@ public class Main {
         Spark.post("/login", (request, response) -> {
             String name = request.queryParams("loginName");
             if (!name.isEmpty()) {
-                users.putIfAbsent(name, new User(name)); // simple way to register new user
+                users.putIfAbsent(name, new User(name));
             }
             Session session = request.session();
-            session.attribute("userName", name);    // track user in session cookie
+            session.attribute("userName", name);
             response.redirect("/");
             return "";
 
