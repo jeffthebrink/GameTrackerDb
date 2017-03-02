@@ -1,4 +1,4 @@
-# GameTrackerDb assignment given on 2-28
+# GameTrackerDb assignment given on 2-27
 The requirements for this assignment were:
 Create the Connection and execute a query to create a games table that stores the game name and other attributes.
 Write a static method insertGame and run it in the /create-game route. It should insert a new row with the user-supplied information.
