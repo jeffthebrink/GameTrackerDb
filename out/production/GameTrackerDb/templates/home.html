@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body bgcolor="#00bfff">
+
+<h1>Welcome to the Game Tracker App, {{name}}!</h1>
+
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+<h3>Input a new game:</h3>
+<form action="/create-game" method="post">
+    <input type="text" placeholder="Game name" name="gameName" width="200" />
+
+    <select name="gameGenre">
+        <option selected disabled>Genre</option>
+        <option value="adventure">Adventure</option>
+        <option value="rpg">RPG</option>
+        <option value="strategy">Strategy</option>
+        <option value="shooter">Shooter</option>
+    </select>
+
+    <select name = "gamePlatform">
+        <option selected disabled>Platform</option>
+        <option value="pc">PC</option>
+        <option value="ps4">PS4</option>
+        <option value="xbone">XBox one</option>
+        <option value="wiiu">Wii U</option>
+    </select>
+
+    <input type="number" placeholder="Release Year" name="gameYear" />
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<h3>Delete a game:</h3>
+<form action="/deleteGame" method="post">
+    <input type="text" placeholder="Game number" name="deleteGameNumber" width="100" />
+    <button type="submit">Delete</button>
+</form>
+
+<h3>Current game list:</h3>
+<ol>
+    {{#games}}
+    <li>{{name}} - {{genre}} - {{platform}} - {{releaseYear}} </li>
+    {{/games}}
+</ol>
+
+<h3>Edit a game:</h3>
+<form action="/editGame" method="post">
+    <input type="text" placeholder="Game number" name="editGameNumber"/>
+
+    <input type="text" placeholder="New game name" name="editGameName" width="100" />
+
+    <select name="editGameGenre">
+        <option selected disabled>Genre</option>
+        <option value="adventure">Adventure</option>
+        <option value="rpg">RPG</option>
+        <option value="strategy">Strategy</option>
+        <option value="shooter">Shooter</option>
+    </select>
+
+    <select name = "editGamePlatform">
+        <option selected disabled>Platform</option>
+        <option value="pc">PC</option>
+        <option value="ps4">PS4</option>
+        <option value="xbone">XBox one</option>
+        <option value="wiiu">Wii U</option>
+    </select>
+
+    <input type="number" placeholder="Release Year" name="editGameYear" />
+
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
